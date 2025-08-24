@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Random JSON App</title>
+<link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+<header>
+<h1>PRODUCTIVITY-TIPS-APP</h1>
+<p>Click to fetch random tips from the JSON API.</p>
+</header>
+
+
+<main>
+<section class="controls">
+<label for="count">How many?</label>
+<input id="count" type="number" min="1" max="10" value="1" />
+<button id="btnRandom">Get Random</button>
+<input id="search" type="search" placeholder="Search… (e.g. focus)" />
+<button id="btnSearch">Search</button>
+</section>
+
+
+<section id="cards" class="cards" aria-live="polite"></section>
+
+
+<section>
+<h2>Raw JSON</h2>
+<pre id="raw" class="json"></pre>
+</section>
+</main>
+
+
+<footer>
+<small>API: <code>/api/random</code>, <code>/api/items</code>, <code>/api/search</code>, <code>/api/categories</code></small>
+</footer>
+
+
+<script src="/static/app.js"></script>
+</body>
+</html>
