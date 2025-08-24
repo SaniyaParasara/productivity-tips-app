@@ -10,7 +10,7 @@ pipeline {
         DOCKER_IMAGE_NAME = 'random-json-app'
         CONTAINER_NAME = 'random-json-app-container'
         // Note: The 'master' branch is often renamed to 'main'. Adjust this if needed.
-        GITHUB_BRANCH = 'master'
+        GITHUB_BRANCH = 'main'
     }
 
     stages {
