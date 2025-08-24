@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "id": 2,
+      "title": "Pomodoro Sprint",
+      "text": "25 minutes work + 5 minutes break = momentum.",
+      "category": "productivity",
+      "tags": ["time", "study", "flow"]
+    },
+    {
+      "id": 3,
+      "title": "Walk It Out",
+      "text": "A short walk can reset your brain between tasks.",
+      "category": "wellness",
+      "tags": ["break", "brain", "reset"]
+    },
+    {
+      "id": 4,
+      "title": "One Thing Rule",
+      "text": "Each morning, pick one must-do task and finish it first.",
+      "category": "productivity",
+      "tags": ["priority", "focus"]
+    },
+    {
+      "id": 5,
+      "title": "Deep Work Block",
+      "text": "Silence notifications for 60–90 minutes of deep work.",
+      "category": "productivity",
+      "tags": ["deep work", "silence"]
+    },
+    {
+      "id": 6,
+      "title": "Gratitude Note",
+      "text": "Write one thing you’re grateful for to boost mood.",
+      "category": "mindset",
+      "tags": ["journal", "mood"]
+    },
+    {
+      "id": 7,
+      "title": "Tidy Desk, Clear Mind",
+      "text": "Two minutes to declutter reduces friction to start.",
+      "category": "environment",
+      "tags": ["declutter", "start"]
+    },
+    {
+      "id": 8,
+      "title": "Stretch Break",
+      "text": "Loosen your shoulders and neck every hour.",
+      "category": "wellness",
+      "tags": ["posture", "break"]
+    },
+    {
+      "id": 9,
+      "title": "Batch Notifications",
+      "text": "Check messages 2–3 times/day instead of constantly.",
+      "category": "productivity",
+      "tags": ["notifications", "batching"]
+    },
+    {
+      "id": 10,
+      "title": "Sleep Wins",
+      "text": "Aim for 7–8 hours—tomorrow’s focus starts tonight.",
+      "category": "wellness",
+      "tags": ["sleep", "focus"]
+    }
+  ]
+}
