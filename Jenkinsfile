@@ -1,9 +1,8 @@
 pipeline {
-    agent {
-        // Specifies that the pipeline will run on a Docker agent.
-        // The Docker image will be built from the Dockerfile in the current directory.
-        dockerfile true
-    }
+    // We are changing the agent type from `dockerfile` to `any`
+    // to avoid the "Invalid agent type" error. This is a more universally
+    // supported approach that works with most Jenkins setups.
+    agent any
 
     environment {
         // Define environment variables to be used throughout the pipeline.
@@ -25,7 +24,9 @@ pipeline {
                     // `build.commitId` provides a unique identifier from the current Git commit.
                     echo 'Building Docker image...'
                     def buildNumber = env.BUILD_NUMBER
-                    docker.build("${DOCKER_IMAGE_NAME}:${buildNumber}", "-f Dockerfile .")
+                    // Using a shell command for Docker build, which is a more general approach
+                    // that works with the `agent any` directive.
+                    sh "docker build -t ${DOCKER_IMAGE_NAME}:${buildNumber} -f Dockerfile ."
                 }
             }
         }
