@@ -1,26 +1,24 @@
-# Production-ready container
-FROM python:3.12-slim
+    # Use an official Python runtime as a parent image
+    FROM python:3.9-slim
 
+    # Set the working directory in the container
+    WORKDIR /app
 
-ENV PYTHONDONTWRITEBYTECODE=1 \
-PYTHONUNBUFFERED=1 \
-PIP_NO_CACHE_DIR=1
+    # Copy the current directory contents into the container at /app
+    COPY . /app
 
+    # Install any needed packages specified in requirements.txt
+    RUN pip install --no-cache-dir -r requirements.txt
 
-WORKDIR /app
+    # Make port 5000 available to the world outside this container
+    EXPOSE 5000
 
+    # Define environment variable
+    ENV FLASK_APP=app.py
 
-# Install deps first for layer caching
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+    # Run tests before starting the application
+    RUN python -m pytest tests/test_app.py
 
-
-# Copy app
-COPY . .
-
-
-EXPOSE 8000
-
-
-# Use gunicorn for prod
-CMD ["gunicorn", "app:app", "-b", "0.0.0.0:8000", "--workers", "2", "--threads", "4"]
+    # Run app.py when the container launches
+    CMD ["flask", "run", "--host=0.0.0.0"]
+    
